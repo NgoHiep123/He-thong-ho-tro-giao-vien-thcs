@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <title>⚡ K6-D1: Làm quen PowerPoint</title>
+  <title>⚡ K6-D1: ⚠️ Mặt trái Internet</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,13 +34,13 @@
         <div class="inline-block mb-3 px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-full">
           <span class="text-sm font-bold text-purple-700">🎓 KHỐI 6 - BÀI D1</span>
         </div>
-        <h1 class="text-3xl md:text-4xl font-black text-gray-900 mb-2">🎬 Làm quen PowerPoint</h1>
-        <p class="text-gray-600 text-lg">🎯 10 câu hỏi - Thời gian: ~10 phút</p>
+        <h1 class="text-3xl md:text-4xl font-black text-gray-900 mb-2">⚠️ Mặt trái Internet</h1>
+        <p class="text-gray-600 text-lg">🎯 5 câu hỏi - Thời gian: ~5 phút</p>
       </div>
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 p-4 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl">
         <div class="flex items-center gap-3">
           <div class="text-3xl">📝</div>
-          <div><div id="progress" class="text-gray-900 font-bold text-lg">Câu 1/10</div><div class="text-sm text-gray-500">Chúc bạn làm bài tốt!</div></div>
+          <div><div id="progress" class="text-gray-900 font-bold text-lg">Câu 1/5</div><div class="text-sm text-gray-500">Chúc bạn làm bài tốt!</div></div>
         </div>
         <div class="flex items-center gap-3">
           <div class="flex-1 w-48 h-3 rounded-full bg-gray-200 overflow-hidden"><div id="bar" class="h-full rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 transition-all" style="width:10%"></div></div>
@@ -76,29 +76,116 @@
     function getStudent(){try{return JSON.parse(localStorage.getItem('student')||'null')}catch(e){return null}}
     const student=getStudent();
     (function(){const pill=document.getElementById('userPill');if(student&&pill){pill.classList.remove('hidden');pill.innerHTML=`👤 ${student.name} · Lớp ${student.className}`}})();
-    const quizData=[
-      {question: "Microsoft PowerPoint là phần mềm dùng để làm gì?", options: ["Tạo bài trình chiếu", "Soạn thảo văn bản", "Tính toán", "Vẽ tranh chuyên nghiệp"], answer: 0},
-      {question: "Đuôi file của PowerPoint là gì?", options: [".pptx", ".docx", ".xlsx", ".txt"], answer: 0},
-      {question: "Slide trong PowerPoint là gì?", options: ["Trang chiếu trong bài trình chiếu", "Toàn bộ bài trình chiếu", "Hình ảnh", "Văn bản"], answer: 0},
-      {question: "Để tạo slide mới. Ta nhấn tổ hợp phím nào?", options: ["Ctrl + M", "Ctrl + N", "Ctrl + S", "Ctrl + O"], answer: 0},
-      {question: "Layout trong PowerPoint là gì?", options: ["Bố cục của slide", "Màu sắc", "Font chữ", "Kích thước"], answer: 0},
-      {question: "Tại sao nên dùng PowerPoint cho thuyết trình?", options: ["Trực quan; thu hút; dễ truyền đạt ý tưởng", "Để văn bản dài hơn", "Để tốn thời gian", "Không có lý do"], answer: 0},
-      {question: "Một bài trình chiếu tốt nên có bao nhiêu slide?", options: ["Vừa đủ; không quá dài; tập trung nội dung chính", "Càng nhiều càng tốt", "Chỉ 1 slide", "100 slides trở lên"], answer: 0},
-      {question: "Khác biệt chính giữa Word và PowerPoint?", options: ["Word cho văn bản dài; PowerPoint cho trình chiếu", "Giống nhau", "PowerPoint khó hơn", "Word không thể có hình"], answer: 0},
-      {question: "Chuẩn bị thuyết trình về du lịch Đà Lạt. Nên dùng phần mềm nào?", options: ["PowerPoint", "Word", "Excel", "Notepad"], answer: 0},
-      {question: "Báo cáo dự án nhóm trước lớp. Công cụ nào phù hợp nhất?", options: ["PowerPoint", "Chỉ nói suông", "Viết lên giấy A4", "Word in ra"], answer: 0}
+    
+    // Tất cả câu hỏi (12 câu)
+    const allQuestions=[
+      {question: "Virus máy tính là gì?", options: ['Phần cứng tăng tốc máy', 'Phần mềm có khả năng tự nhân bản và lây lan qua thiết bị/mạng', 'Tập tin ảnh', 'Ứng dụng học tập'], answer: 1},
+      {question: "Hành vi nào dễ khiến máy nhiễm mã độc?", options: ['Chỉ mở tệp từ thầy cô', 'Cập nhật phần mềm', 'Nháy vào liên kết lạ trong email từ người không quen', 'Dùng mật khẩu mạnh'], answer: 2},
+      {question: "Thiết bị trung gian có thể làm lây virus là gì?", options: ['Chuột', 'Bàn phím', 'USB/ổ di động', 'Màn hình'], answer: 2},
+      {question: "Vì sao không nên mở email/tệp đính kèm không rõ nguồn?", options: ['Tốn pin', 'Mất lịch sử trình duyệt', 'Có thể chứa mã độc dẫn tới mất dữ liệu/tài khoản', 'Giảm âm lượng'], answer: 2},
+      {question: "Khác biệt giữa “thông tin” và “tin đồn trên mạng xã hội” là gì?", options: ['Tin đồn luôn đúng', 'Thông tin có nguồn kiểm chứng; tin đồn thường thiếu căn cứ', 'Thông tin luôn sai', 'Không khác nhau'], answer: 1}
     ];
-    let currentQ=0,score=0,startTime=Date.now();
+    
+    // Hàm shuffle mảng
     function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
+    
+    // Hàm trộn đáp án cho một câu hỏi
     function withShuffledOptions(q){const order=q.options.map((_,i)=>i);shuffle(order);return{...q,options:order.map(i=>q.options[i]),answer:order.indexOf(q.answer)}}
-    const quiz=quizData.map(withShuffledOptions);
-    function showQuestion(){const q=quiz[currentQ];document.getElementById('question-text').textContent=q.question;document.getElementById('progress').innerHTML=`Câu ${currentQ+1}/10`;document.getElementById('bar').style.width=((currentQ+1)/10*100)+'%';const container=document.getElementById('options-container');container.innerHTML='';const letters=['A','B','C','D'];q.options.forEach((opt,i)=>{const btn=document.createElement('button');btn.className='option-btn w-full text-left px-6 py-4 rounded-xl border-2 border-gray-200 hover:border-purple-400 bg-white font-semibold text-gray-800 text-lg';btn.innerHTML=`<span class="inline-block w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-bold mr-3 text-center leading-8">${letters[i]}</span>${opt}`;btn.onclick=()=>checkAnswer(i,btn);container.appendChild(btn)});document.getElementById('next-btn').classList.add('hidden');document.getElementById('feedback-text').textContent=''}
-    function checkAnswer(chosen,btn){const q=quiz[currentQ];const allBtns=document.querySelectorAll('.option-btn');allBtns.forEach(b=>b.disabled=true);if(chosen===q.answer){btn.classList.add('correct');score++;document.getElementById('score').innerHTML=`🏆 ${score}`;document.getElementById('feedback-text').innerHTML='✅ <span style="color:#10b981">Chính xác!</span>';confetti({particleCount:50,spread:60,origin:{y:0.6}})}else{btn.classList.add('incorrect');allBtns[q.answer].classList.add('correct');document.getElementById('feedback-text').innerHTML='❌ <span style="color:#ef4444">Chưa đúng!</span>'}document.getElementById('next-btn').classList.remove('hidden')}
+    
+    // Lấy tối đa 10 câu ngẫu nhiên, trộn câu hỏi và đáp án
+    const numQuestions = Math.min(10, allQuestions.length);
+    const selectedQuestions = shuffle([...allQuestions]).slice(0, numQuestions);
+    const quiz = selectedQuestions.map(withShuffledOptions);
+    
+    let currentQ=0,score=0,startTime=Date.now();
+    
+    function showQuestion(){
+      const q=quiz[currentQ];
+      document.getElementById('question-text').textContent=q.question;
+      document.getElementById('progress').innerHTML=`Câu ${currentQ+1}/${quiz.length}`;
+      document.getElementById('bar').style.width=((currentQ+1)/quiz.length*100)+'%';
+      const container=document.getElementById('options-container');
+      container.innerHTML='';
+      const letters=['A','B','C','D'];
+      q.options.forEach((opt,i)=>{
+        const btn=document.createElement('button');
+        btn.className='option-btn w-full text-left px-6 py-4 rounded-xl border-2 border-gray-200 hover:border-purple-400 bg-white font-semibold text-gray-800 text-lg';
+        btn.innerHTML=`<span class="inline-block w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-bold mr-3 text-center leading-8">${letters[i]}</span>${opt}`;
+        btn.onclick=()=>checkAnswer(i,btn);
+        container.appendChild(btn)
+      });
+      document.getElementById('next-btn').classList.add('hidden');
+      document.getElementById('feedback-text').textContent=''
+    }
+    
+    function checkAnswer(chosen,btn){
+      const q=quiz[currentQ];
+      const allBtns=document.querySelectorAll('.option-btn');
+      allBtns.forEach(b=>b.disabled=true);
+      if(chosen===q.answer){
+        btn.classList.add('correct');
+        score++;
+        document.getElementById('score').innerHTML=`🏆 ${score}`;
+        document.getElementById('feedback-text').innerHTML='✅ <span style="color:#10b981">Chính xác!</span>';
+        confetti({particleCount:50,spread:60,origin:{y:0.6}}))
+      }else{
+        btn.classList.add('incorrect');
+        allBtns[q.answer].classList.add('correct');
+        document.getElementById('feedback-text').innerHTML='❌ <span style="color:#ef4444">Chưa đúng!</span>'
+      }
+      if(currentQ<quiz.length-1){
+        document.getElementById('next-btn').classList.remove('hidden')
+      }else{
+        setTimeout(showResults,2000)
+      }
+    }
+    
     document.getElementById('next-btn').onclick=()=>{currentQ++;if(currentQ<quiz.length)showQuestion();else showResults()};
-    function showResults(){document.querySelector('#quiz-container>div:first-child').classList.add('hidden');document.getElementById('options-container').classList.add('hidden');document.getElementById('next-btn').classList.add('hidden');document.getElementById('feedback-container').classList.add('hidden');document.getElementById('results-container').classList.remove('hidden');const pct=(score/quiz.length*100).toFixed(0);document.getElementById('final-score').textContent=`${score}/10 (${pct}%)`;let comment,emoji;if(pct>=90){comment="🌟 Xuất sắc!";emoji="🎉"}else if(pct>=70){comment="👍 Rất tốt!";emoji="😊"}else if(pct>=50){comment="💪 Khá tốt!";emoji="😃"}else{comment="📖 Cố gắng hơn nhé!";emoji="😅"}document.getElementById('score-comment').textContent=comment;document.getElementById('result-emoji').textContent=emoji;if(pct>=70){const duration=3000,end=Date.now()+duration;(function frame(){confetti({particleCount:3,angle:60,spread:55,origin:{x:0}});confetti({particleCount:3,angle:120,spread:55,origin:{x:1}});if(Date.now()<end)requestAnimationFrame(frame)}())}const duration=Math.floor((Date.now()-startTime)/1000);if(student){sendResult(student.name,student.className,QUIZ_ID,score,quiz.length,duration)}else{document.getElementById('send-status').textContent='Chưa đăng nhập'}}
-    async function sendResult(name,className,quizId,score,total,duration){try{const url=`${ENDPOINT}?student_name=${encodeURIComponent(name)}&class_name=${encodeURIComponent(className)}&quiz_id=${quizId}&score=${score}&total=${total}&duration=${duration}`;await fetch(url,{mode:'no-cors'});document.getElementById('send-status').textContent='✅ Đã lưu!'}catch(e){document.getElementById('send-status').textContent='⚠️ Không lưu được'}}
+    
+    function showResults(){
+      document.querySelector('.quiz-container>div:first-child').classList.add('hidden');
+      document.getElementById('question-card').classList.add('hidden');
+      document.getElementById('options-container').classList.add('hidden');
+      document.getElementById('next-btn').classList.add('hidden');
+      document.getElementById('feedback-container').classList.add('hidden');
+      document.getElementById('results-container').classList.remove('hidden');
+      const pct=(score/quiz.length*100).toFixed(0);
+      document.getElementById('final-score').textContent=`${score}/${quiz.length} (${pct}%)`;
+      let comment,emoji;
+      if(pct>=90){comment="🌟 Xuất sắc!";emoji="🎉"}
+      else if(pct>=70){comment="👍 Rất tốt!";emoji="😊"}
+      else if(pct>=50){comment="💪 Khá tốt!";emoji="😃"}
+      else{comment="📖 Cố gắng hơn nhé!";emoji="😅"}
+      document.getElementById('score-comment').textContent=comment;
+      document.getElementById('result-emoji').textContent=emoji;
+      if(pct>=70){
+        const duration=3000,end=Date.now()+duration;
+        (function frame(){
+          confetti({particleCount:3,angle:60,spread:55,origin:{x:0}});
+          confetti({particleCount:3,angle:120,spread:55,origin:{x:1}});
+          if(Date.now()<end)requestAnimationFrame(frame)
+        })()
+      }
+      const duration=Math.floor((Date.now()-startTime)/1000);
+      if(student){
+        sendResult(student.name,student.className,QUIZ_ID,score,quiz.length,duration)
+      }else{
+        document.getElementById('send-status').textContent='Chưa đăng nhập'
+      }
+    }
+    
+    async function sendResult(name,className,quizId,score,total,duration){
+      try{
+        const url=`${ENDPOINT}?student_name=${encodeURIComponent(name)}&class_name=${encodeURIComponent(className)}&quiz_id=${quizId}&score=${score}&total=${total}&duration=${duration}`;
+        await fetch(url,{mode:'no-cors'});
+        document.getElementById('send-status').textContent='✅ Đã lưu!'
+      }catch(e){
+        document.getElementById('send-status').textContent='⚠️ Không lưu được'
+      }
+    }
+    
     document.getElementById('restart-btn').onclick=()=>location.reload();
-    showQuestion();
+    showQuestion()
   </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <title>⚡ K6-A4: 📊 Biểu diễn dữ liệu</title>
+  <title>⚡ K6-F4: F4</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -32,15 +32,15 @@
     <div class="quiz-container w-full max-w-3xl rounded-3xl shadow-2xl p-6 md:p-10">
       <div class="text-center mb-6">
         <div class="inline-block mb-3 px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-full">
-          <span class="text-sm font-bold text-purple-700">🎓 KHỐI 6 - BÀI A4</span>
+          <span class="text-sm font-bold text-purple-700">🎓 KHỐI 6 - BÀI F4</span>
         </div>
-        <h1 class="text-3xl md:text-4xl font-black text-gray-900 mb-2">📊 Biểu diễn dữ liệu</h1>
-        <p class="text-gray-600 text-lg">🎯 9 câu hỏi - Thời gian: ~9 phút</p>
+        <h1 class="text-3xl md:text-4xl font-black text-gray-900 mb-2">F4</h1>
+        <p class="text-gray-600 text-lg">🎯 7 câu hỏi - Thời gian: ~7 phút</p>
       </div>
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 p-4 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl">
         <div class="flex items-center gap-3">
           <div class="text-3xl">📝</div>
-          <div><div id="progress" class="text-gray-900 font-bold text-lg">Câu 1/9</div><div class="text-sm text-gray-500">Chúc bạn làm bài tốt!</div></div>
+          <div><div id="progress" class="text-gray-900 font-bold text-lg">Câu 1/7</div><div class="text-sm text-gray-500">Chúc bạn làm bài tốt!</div></div>
         </div>
         <div class="flex items-center gap-3">
           <div class="flex-1 w-48 h-3 rounded-full bg-gray-200 overflow-hidden"><div id="bar" class="h-full rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 transition-all" style="width:10%"></div></div>
@@ -71,7 +71,7 @@
     </div>
   </main>
   <script>
-    const QUIZ_ID="K6_A4";
+    const QUIZ_ID="K6_F4";
     const ENDPOINT="https://script.google.com/macros/s/AKfycbwj9IiX8PXC-bNsh4DGIw0uysx0v3jWPNeu0lQpieUIQAx9sT9YNUKTZoQFBjg-w86TKg/exec";
     function getStudent(){try{return JSON.parse(localStorage.getItem('student')||'null')}catch(e){return null}}
     const student=getStudent();
@@ -79,15 +79,13 @@
     
     // Tất cả câu hỏi (12 câu)
     const allQuestions=[
-      {question: "Bit là gì?", options: ['Thiết bị lưu trữ', 'Đơn vị nhỏ nhất biểu diễn/lưu trữ thông tin', 'Đơn vị đo thời gian', 'Lệnh máy tính'], answer: 1},
-      {question: "Bit có thể nhận mấy trạng thái?", options: ['1 trạng thái', '2 trạng thái (0 và 1)', '3 trạng thái', 'Nhiều vô hạn'], answer: 1},
-      {question: "Văn bản trong máy tính được biểu diễn bằng:", options: ['Dãy bit', 'Ảnh chụp', 'Âm thanh', 'Màu sắc'], answer: 0},
-      {question: "Số hóa dữ liệu là:", options: ['Xóa dữ liệu', 'Chuyển dữ liệu thành dãy bit để máy tính xử lí', 'Mã hóa bằng mật khẩu', 'In dữ liệu ra giấy'], answer: 1},
-      {question: "Kết quả số hóa hình ảnh gọi là:", options: ['Văn bản số', 'Âm thanh số', 'Hình ảnh số', 'Mạng số'], answer: 2},
-      {question: "Phát biểu đúng về số hóa âm thanh:", options: ['Chuyển âm thanh thành dãy bit', 'Chuyển âm thanh thành mùi hương', 'Không thể số hóa', 'Chỉ số hóa được tiếng Anh'], answer: 0},
-      {question: "Tại sao máy tính cần số hóa dữ liệu?", options: ['Để tiết kiệm giấy', 'Để có thể xử lí dữ liệu dưới dạng bit', 'Để đẹp hơn', 'Để không cần phần cứng'], answer: 1},
-      {question: "Hoạt động nào thuộc xử lí dữ liệu?", options: ['Gõ văn bản', 'Máy tính nhận dạng chữ (OCR) từ ảnh', 'Lưu tệp vào USB', 'Chụp ảnh'], answer: 1},
-      {question: "Muốn làm file âm thanh nhẹ hơn khi gửi:", options: ['Tăng chất lượng', 'Nén/giảm bitrate (sau số hóa)', 'Đổi tên tệp', 'Chuyển sang ảnh'], answer: 1}
+      {question: "Vòng lặp dùng khi:", options: ['Không lặp lại thao tác', 'Cần lặp lại một (vài) thao tác nhiều lần liên tiếp', 'Chỉ kiểm tra điều kiện', 'Chỉ vẽ hình'], answer: 1},
+      {question: "Trường hợp **biết trước** số lần lặp thường dùng:", options: ['Biến đếm và khuôn mẫu “lặp từ … đến …”', 'Chọn ngẫu nhiên', 'Không cần điều kiện', 'Chỉ rẽ nhánh'], answer: 0},
+      {question: "Trường hợp **không biết trước** số lần lặp thường dựa vào:", options: ['Màu sắc', 'Một điều kiện lặp (tiếp tục khi điều kiện còn thỏa)', 'Âm thanh', 'Thời tiết'], answer: 1},
+      {question: "Trong ví dụ: “Thông báo bình phương của đếm” nằm ở phần:", options: ['Nhánh sai', 'Thao tác trong thân vòng lặp', 'Khởi tạo dữ liệu', 'Kết thúc vòng lặp'], answer: 1},
+      {question: "Sự khác nhau chính giữa hai mẫu lặp (biết trước/không biết trước) là:", options: ['Không khác', 'Tiêu chí điều khiển lặp: số lần xác định sẵn **hoặc** điều kiện', 'Bước đầu tiên', 'Kiểu phông'], answer: 1},
+      {question: "Vận dụng: Vẽ hình vuông 4 cạnh bằng lặp phù hợp là:", options: ['Lặp 2 lần', '**Lặp 4 lần**: hạ bút → di chuyển (a) → nhấc bút → quay phải (90)', 'Chỉ vẽ 1 cạnh', 'Không lặp'], answer: 1},
+      {question: "Vận dụng: Tính tổng 1+2+…+n biết trước n. Cách đúng là:", options: ['Dùng rẽ nhánh', 'Khởi tạo tổng=0; lặp đếm từ 1 đến n: tổng+=đếm; hết lặp', 'Đổi màu nền', 'Không làm gì'], answer: 1}
     ];
     
     // Hàm shuffle mảng
